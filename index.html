@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d22">
+<title>A Birthday Universe for Krishna ✨</title>
+<style>
+:root{--night:#090d22;--pink:#ffb9d0;--gold:#ffe5ad;--white:#fff8ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--white);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+#gate{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;text-align:center;padding:24px;background:radial-gradient(ellipse at 50% 100%,#49305f 0%,transparent 55%),radial-gradient(ellipse at 15% 10%,#202a5b 0%,transparent 45%),linear-gradient(#080c20,#111432);overflow:auto}
+#gate canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.gate-content{position:relative;z-index:1;max-width:650px}
+.moon{font-size:2.4rem;display:block;margin-bottom:22px;color:#eee2ff;text-shadow:0 0 22px #c9b4ff}
+.kicker{font:600 .72rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.25em;color:var(--pink)}
+#gate h1{font-size:clamp(2.7rem,9vw,5.5rem);font-weight:400;line-height:1.02;margin:20px 0}
+#gate h1 em{color:var(--pink);font-weight:400}
+#gate p{line-height:1.8;color:#e5e0ff;font-size:1.08rem}
+.countdown{display:flex;justify-content:center;gap:12px;margin:26px auto}
+.unit{min-width:66px;padding:12px 8px;border:1px solid #d9caff44;border-radius:13px;background:#ffffff0b}
+.unit strong{display:block;font-size:clamp(1.5rem,5vw,2.2rem);font-weight:400;color:var(--gold);font-variant-numeric:tabular-nums}
+.unit span{font: .65rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#d6cdeb}
+#gateStatus{min-height:2.7em;font-size:.95rem}
+#enterBtn{display:none;margin:14px auto 0;border:1px solid #f7c9df66;border-radius:999px;padding:14px 24px;background:linear-gradient(120deg,#d778a6,#9d7cce);color:white;box-shadow:0 0 28px #c77cc633}
+#site{display:none}
+.hero{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;padding:35px 22px;overflow:hidden;background:radial-gradient(ellipse at 50% 115%,#4a316c 0%,transparent 52%),radial-gradient(ellipse at 15% 10%,#202a5b 0%,transparent 45%),linear-gradient(180deg,#080c20,#111432 70%,#1d1738)}
+#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:780px}
+.hero h1{font-weight:400;font-size:clamp(3.5rem,11vw,7.5rem);line-height:.95;letter-spacing:-.045em;margin:22px 0}
+.hero h1 em{font-weight:400;color:var(--pink)}
+.hero p{font-size:clamp(1.08rem,3vw,1.35rem);line-height:1.8;max-width:590px;margin:0 auto 30px;color:#eee9ff}
+.btn{border:1px solid #f7c9df66;border-radius:999px;padding:14px 24px;background:linear-gradient(120deg,#d778a6,#9d7cce);color:white;box-shadow:0 0 28px #c77cc633;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.scroll-note{margin-top:25px;font:.75rem Arial,sans-serif;letter-spacing:.13em;color:#bdbce3}
+.couple-feature{width:min(310px,78vw);margin:28px auto 0;padding:9px 9px 13px;background:#fff8ff;border-radius:6px;box-shadow:0 18px 55px #0006;transform:rotate(-1deg)}
+.couple-feature img{display:block;width:100%;height:auto;max-height:430px;object-fit:cover;border-radius:3px}
+.couple-caption{margin:12px 5px 0;color:#553956;font-style:italic;font-size:1rem}
+
+section{padding:82px 20px;position:relative}.wrap{max-width:1050px;margin:auto}
+.kicker{text-align:center;color:#e7b7df}
+h2{text-align:center;font-size:clamp(2.1rem,6vw,4rem);font-weight:400;line-height:1.1;margin:14px 0 20px}
+.lead{max-width:680px;text-align:center;margin:0 auto 32px;color:#e1ddf6;font-size:1.08rem;line-height:1.9}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:35px}
+.photo-card{padding:10px 10px 17px;background:#fff9ff;border-radius:5px;box-shadow:0 15px 40px #0004;transform:rotate(var(--tilt));transition:transform .25s}
+.photo-card:hover{transform:translateY(-5px) rotate(0)}
+.photo-card img{width:100%;height:360px;display:block;object-fit:cover;background:#292342}
+.photo-caption{text-align:center;color:#4a3155;font-style:italic;padding:13px 4px 0;font-size:1rem}
+.letter-section{background:radial-gradient(ellipse at 50% 0%,#32244f 0%,#10132d 65%)}
+.letter-card{max-width:720px;margin:30px auto 0;padding:clamp(25px,6vw,50px);background:#fff9ff;color:#44304f;border-radius:6px;box-shadow:0 20px 65px #0004;text-align:left;line-height:1.95;font-size:1.08rem;white-space:pre-line}
+.last{min-height:72vh;display:grid;place-items:center;text-align:center;background:radial-gradient(ellipse at 50% 100%,#4a2c63 0%,transparent 60%),#090d22}
+.big-heart{font-size:2.4rem;color:var(--pink);filter:drop-shadow(0 0 18px #ff9fc866);margin:22px 0}
+.final-message{min-height:3em;max-width:600px;margin:22px auto 0;line-height:1.8;font-size:1.25rem;color:var(--gold)}
+footer{text-align:center;padding:25px 15px;color:#aaa6d2;font-size:.85rem;border-top:1px solid #ffffff10}
+.float{position:fixed;bottom:-35px;pointer-events:none;z-index:10;animation:rise linear forwards;text-shadow:0 0 12px #ffb9d088}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media(max-width:760px){section{padding:68px 18px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.photo-card img{height:300px}.photo-card{transform:none}}
+@media(max-width:440px){.gallery{grid-template-columns:1fr;max-width:340px;margin:30px auto}.photo-card img{height:auto;max-height:470px;object-fit:contain;background:#15132b}.countdown{gap:7px}.unit{min-width:58px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="gate">
+  <canvas id="gateStars" aria-hidden="true"></canvas>
+  <div class="gate-content">
+    <span class="moon">☾ ✦</span>
+    <div class="kicker">A little universe, made just for you</div>
+    <h1>Something is waiting<br><em>for you, Krishna.</em></h1>
+    <p>This little universe is locked until midnight. Come back when the clock turns to your birthday. 💗</p>
+    <div class="countdown" aria-label="Countdown to midnight">
+      <div class="unit"><strong id="hours">00</strong><span>Hours</span></div>
+      <div class="unit"><strong id="minutes">00</strong><span>Minutes</span></div>
+      <div class="unit"><strong id="seconds">00</strong><span>Seconds</span></div>
+    </div>
+    <p id="gateStatus" aria-live="polite">Counting down to midnight…</p>
+    <button id="enterBtn" onclick="revealSite()">Open your birthday surprise ✨</button>
+    <p style="font-size:.75rem;color:#aaa6d2">A surprise made with love.</p>
+  </div>
+</div>
+
+<div id="site">
+<header class="hero" id="top">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <span class="moon">☾ ✦</span>
+    <div class="kicker">Your birthday, your little universe</div>
+    <h1>Happy Birthday,<br><em>Krishna</em> 💗</h1>
+    <p>In a universe full of stars, you are one of the brightest parts of my world. Today, this little corner of the internet is all yours.</p>
+    <button class="btn" onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">Our little gallery ↓</button>
+    <div class="couple-feature">
+      <img src="photos/couple-home.jpeg" alt="A favourite photo of us together">
+      <div class="couple-caption">My favourite place is right beside you. ❤️</div>
+    </div>
+    <div class="scroll-note">MADE WITH LOVE · JUST FOR YOU</div>
+  </div>
+</header>
+
+<section id="memories">
+  <div class="wrap">
+    <div class="kicker">Little moments, a million feelings</div>
+    <h2>My favourite view is you.</h2>
+    <p class="lead">If I could keep little pieces of happiness in the stars, I would fill the whole sky with these moments. Every photo holds a little piece of your magic.</p>
+    <div class="gallery">
+      <article class="photo-card" style="--tilt:-1.5deg"><img src="photos/memory-1.jpeg" alt="Krishna by the sea" loading="lazy"><div class="photo-caption">A little sunshine by the sea 🌊</div></article>
+      <article class="photo-card" style="--tilt:1.2deg"><img src="photos/memory-2.jpeg" alt="A warm, candid portrait of Krishna" loading="lazy"><div class="photo-caption">Beautiful in your own way ✨</div></article>
+      <article class="photo-card" style="--tilt:-.8deg"><img src="photos/memory-3.jpeg" alt="Krishna with a little flower in her hair" loading="lazy"><div class="photo-caption">The little things are magic 🌼</div></article>
+      <article class="photo-card" style="--tilt:1.5deg"><img src="photos/memory-4.jpeg" alt="Krishna sitting beside the ocean" loading="lazy"><div class="photo-caption">A moment worth keeping 🌙</div></article>
+      <article class="photo-card" style="--tilt:-1.2deg"><img src="photos/memory-5.jpeg" alt="Krishna smiling by a doorway" loading="lazy"><div class="photo-caption">That smile. Always that smile 💗</div></article>
+      <article class="photo-card" style="--tilt:.8deg"><img src="photos/memory-6.jpeg" alt="Another favourite portrait of Krishna" loading="lazy"><div class="photo-caption">My favourite kind of beautiful 🫶</div></article>
+    </div>
+  </div>
+</section>
+
+<section class="letter-section" id="letter">
+  <div class="wrap">
+    <div class="kicker">Words I hope you keep</div>
+    <h2>A little letter for you</h2>
+    <article class="letter-card">Happy birthday, my Krishna. ❤️
+
+If I could wish one thing for you today, it would be that you could see yourself the way I see you: someone precious, someone worth choosing, and someone whose happiness matters deeply to me.
+
+I hope this year brings you peace when life feels loud, courage when things feel uncertain, and a hundred little moments that remind you how wonderful it is to be alive. I hope you keep growing into the person you want to become, without ever feeling that you have to be anyone other than yourself to be loved.
+
+I can't promise that every day will be perfect. But I can promise that my wishes for you are real: that you feel appreciated, that your dreams have room to grow, and that you never forget how much goodness you deserve.
+
+Thank you for being you. If I could place one thing among the stars tonight, it would be this wish: may life be gentle with your heart, and may there always be reasons for you to smile.
+
+Happy birthday, my love. May this be the beginning of a beautiful new chapter. I hope I get to be there for many more birthdays, cheering for you, caring for you, and loving you in all the little ways that matter.
+
+With all my love,
+Your person, always. 💗</article>
+  </div>
+</section>
+
+<section class="last" id="wish">
+  <div class="wrap">
+    <div class="kicker">One last wish</div>
+    <h2>Make a wish, my love.</h2>
+    <p class="lead">Somewhere among all those stars is a reminder that even in a huge universe, one person can mean the world to someone else.</p>
+    <div class="big-heart">♡</div>
+    <button class="btn" onclick="celebrate()">A final little surprise ✨</button>
+    <p class="final-message" id="finalMessage" aria-live="polite"></p>
+  </div>
+</section>
+<footer>For Krishna, with love — made especially for your birthday. ✦</footer>
+</div>
+
+<script>
+// Fixed birthday reveal: October 18, 2026 at 12:00 AM India Standard Time (IST, UTC+05:30).
+// The explicit UTC offset makes this moment identical for visitors in Kuwait, India, or elsewhere.
+const unlockAt = new Date('2026-10-18T00:00:00+05:30');
+function updateCountdown(){
+ const now=new Date();
+ if(now>=unlockAt){
+   document.getElementById('hours').textContent='00';
+   document.getElementById('minutes').textContent='00';
+   document.getElementById('seconds').textContent='00';
+   document.getElementById('gateStatus').textContent='It is midnight in India. Your surprise is ready, Krishna. 💗';
+   document.getElementById('enterBtn').style.display='inline-block';
+   return;
+ }
+ const total=Math.max(0,Math.floor((unlockAt-now)/1000));
+ document.getElementById('hours').textContent=String(Math.floor(total/3600)).padStart(2,'0');
+ document.getElementById('minutes').textContent=String(Math.floor((total%3600)/60)).padStart(2,'0');
+ document.getElementById('seconds').textContent=String(total%60).padStart(2,'0');
+ document.getElementById('gateStatus').textContent='Unlocks at 12:00 AM India time (IST) on Sunday, October 18.';
+}
+function revealSite(){document.getElementById('gate').style.display='none';document.getElementById('site').style.display='block';document.body.style.overflowX='hidden';window.scrollTo(0,0);setupStars('stars');drawStars();}
+updateCountdown();setInterval(updateCountdown,1000);
+let stars=[],starCanvas=null,starCtx=null,starFrame=false;
+function setupStars(id='gateStars'){starCanvas=document.getElementById(id);if(!starCanvas)return;starCtx=starCanvas.getContext('2d');const dpr=Math.min(window.devicePixelRatio||1,2);starCanvas.width=innerWidth*dpr;starCanvas.height=innerHeight*dpr;starCanvas.style.width='100%';starCanvas.style.height='100%';starCtx.setTransform(dpr,0,0,dpr,0,0);stars=Array.from({length:Math.min(180,Math.floor(innerWidth/5))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5+.25,a:Math.random()*.7+.2,s:Math.random()*.012+.003}));}
+function drawStars(){if(starFrame)return;starFrame=true;function frame(){if(!starCanvas||!starCtx)return;starCtx.clearRect(0,0,innerWidth,innerHeight);for(const s of stars){s.a+=s.s;if(s.a>.95||s.a<.15)s.s*=-1;starCtx.globalAlpha=Math.max(.15,Math.min(.95,s.a));starCtx.fillStyle='#fff5ff';starCtx.beginPath();starCtx.arc(s.x,s.y,s.r,0,Math.PI*2);starCtx.fill()}starCtx.globalAlpha=1;requestAnimationFrame(frame)}frame();}
+setupStars();drawStars();
+addEventListener('resize',()=>{const visible=document.getElementById('site').style.display==='block';setupStars(visible?'stars':'gateStars');});
+function floatHeart(){const e=document.createElement('span');e.className='float';e.textContent=['♥','♡','✦','✨'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(15+Math.random()*20)+'px';e.style.color=['#ffb9d0','#d9c5ff','#ffe5ad'][Math.floor(Math.random()*3)];e.style.animationDuration=(4+Math.random()*5)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),9500)}
+function celebrate(){document.getElementById('finalMessage').textContent='Happy birthday, Krishna. You are one of my favourite reasons to believe that life can be beautiful. Whatever this new year brings, I hope it brings you closer to your dreams—and reminds you, again and again, that you are loved. ❤️';for(let i=0;i<32;i++)setTimeout(floatHeart,i*90)}
+setInterval(()=>{if(document.getElementById('site').style.display==='block'&&Math.random()>.45)floatHeart()},1100);
+</script>
+</body>
+</html>
